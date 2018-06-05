@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
+    
 
+    
     override func viewDidLoad() {
+       
+        let newUser  = User()
+        newUser.login = "Ingermanm@hotmail.com"
+        newUser.password = "hola"
+        print("name of User: \(newUser.login)")
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -19,7 +28,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
+
 
