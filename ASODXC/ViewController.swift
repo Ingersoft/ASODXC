@@ -8,19 +8,28 @@
 
 import UIKit
 import RealmSwift
+import Realm
 
 class ViewController: UIViewController {
-    
 
     
+    @IBOutlet weak var loginControl: UITextField!
+    @IBOutlet weak var passwordControl: UITextField!
+    
     override func viewDidLoad() {
-       
-        let newUser  = User()
-        newUser.login = "Ingermanm@hotmail.com"
-        newUser.password = "hola"
+
+        
+        
+        let newUser  = LoginModel()
+        newUser.login = "Ingerman"
+        newUser.password = "Hola"
         print("name of User: \(newUser.login)")
         
-        super.viewDidLoad()
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(newUser)
+        }
+                super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -29,6 +38,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func EnterLogin(_ sender: Any) {
+
+    }
 }
 
 
