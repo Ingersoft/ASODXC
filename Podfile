@@ -7,6 +7,9 @@ target 'ASODXC' do
   pod 'SVProgressHUD'
   pod 'SwiftyJSON'
   pod ‘RealmSwift’
+<<<<<<< HEAD
   pod 'Realm'
+=======
+>>>>>>> REALM
 
 end

@@ -8,7 +8,10 @@ PODS:
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
+<<<<<<< HEAD
   - Realm
+=======
+>>>>>>> REALM
   - RealmSwift
   - SVProgressHUD
   - SwiftyJSON
@@ -26,6 +29,10 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
+<<<<<<< HEAD
 PODFILE CHECKSUM: 5876431374696f40e9b19fe3e9d8896f0d0a2828
+=======
+PODFILE CHECKSUM: c0ab84bb8550ba70754c3f0febc3da24257683b2
+>>>>>>> REALM
 
 COCOAPODS: 1.5.3
