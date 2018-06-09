@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-import Realm
 
 class ViewController: UIViewController {
 
@@ -17,20 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordControl: UITextField!
     
     override func viewDidLoad() {
-
-        
-        
-        let newUser  = LoginModel()
-        newUser.login = "Ingerman"
-        newUser.password = "Hola"
-        print("name of User: \(newUser.login)")
-        
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(newUser)
-        }
-                super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        loginControl.text = "ingermanm@hotmail.com"
+        passwordControl.text = "swift"
+        super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,9 +26,23 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBAction func EnterLogin(_ sender: Any) {
 
+    @IBAction func LoginAction(_ sender: Any) {
+        let password: String
+        let login: String
+        
+        login = loginControl.text!
+        password = passwordControl.text!
+        LoginModel.AddUser(login,password)
+        didLogin(method: "\n", info: "Login : \(login)")
+    }
+    
+    
+    private func didLogin(method: String, info: String) {
+        let message = "Successfully logged in:  \(method)" + info
+        let alert = UIAlertController(title: "Welcome to ASODXC", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
